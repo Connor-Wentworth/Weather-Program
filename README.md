@@ -3,7 +3,7 @@
 using namespace std;
 
 // Global variables used throughout the program
-double Temp, Wspeed, Dew, Wchill, CBH;
+float Temp, Wspeed, Dew, Wchill, CBH;
 // Temp   = Air Temperature
 // Wspeed = Wind Speed
 // Dew    = Dew Point
@@ -11,13 +11,13 @@ double Temp, Wspeed, Dew, Wchill, CBH;
 // CBH    = Cloud Base Height result
 
 // Function prototypes (tell the compiler these functions exist)
-void input(double& Temp, double& Wspeed, double& Dew); 
+void input(float& Temp, float& Wspeed, float& Dew);
 // Gets user input for temperature, wind speed, and dew point
 
-void calcwindchill(double& Temp, double& Wspeed); 
+void calcwindchill(float& Temp, float& Wspeed);
 // Calculates the wind chill based on temperature and wind speed
 
-void calccloudbaseheight(double& Temp, double& Dew); 
+void calccloudbaseheight(float& Temp, float& Dew);
 // Calculates the cloud base height using temperature and dew point
 
 int main()
@@ -44,13 +44,13 @@ int main()
 }
 
 // Function to collect user input with validation
-void input(double& Temp, double& Wspeed, double& Dew) {
+void input(float& Temp, float& Wspeed, float& Dew) {
 
 	// Ask the user to enter the air temperature
 	cout << "Enter the Air Temperature ";
 
 	// Keep asking until a valid number is entered
-	while (!(cin >> Temp)) { 
+	while (!(cin >> Temp)) {
 		cout << "Invalid input. Try again: ";
 		cin.clear(); // Reset the error flag on cin
 		cin.ignore(10000, '\n'); // Discard invalid input from buffer
@@ -78,7 +78,7 @@ void input(double& Temp, double& Wspeed, double& Dew) {
 }
 
 // Function that calculates wind chill
-void calcwindchill(double& Temp, double& Wspeed) {
+void calcwindchill(float& Temp, float& Wspeed) {
 
 	// Wind Chill formula used by meteorologists
 	// Uses temperature and wind speed to estimate how cold it feels
@@ -89,7 +89,7 @@ void calcwindchill(double& Temp, double& Wspeed) {
 }
 
 // Function that calculates cloud base height
-void calccloudbaseheight(double& Temp, double& Dew) {
+void calccloudbaseheight(float& Temp, float& Dew) {
 
 	// Cloud Base Height formula
 	// Estimates the altitude where clouds will begin forming

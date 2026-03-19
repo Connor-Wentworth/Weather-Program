@@ -10,6 +10,7 @@ void calccloudBase(double& temp, double& dewPoint, double& cloudBase);
 // function used to take user input and use it to calculate for Cloud Base Height
 void show_output(double& temp, double& windSpeed, double& dewPoint, double& cloudBase, double& windChill);
 // function used to take the output the Wind Chill and the Cloud Base Height
+
 int main() {
 	// Variables for temperature, wind speed, dew point, and calculated results
 	double temp, windSpeed, dewPoint, cloudBase, windChill;

@@ -4,9 +4,9 @@ using namespace std;
 
 // Function prototypes
 void take_input(double& Temp, double& Wspeed, double& Dew);
-void calcWchill(double Temp, double Wspeed, double& Wchill);
-void calcCBH(double Temp, double Dew, double& CBH);
-void show_output(double Temp, double Wspeed, double Dew, double CBH, double Wchill);
+void calcWchill(double& Temp, double& Wspeed, double& Wchill);
+void calcCBH(double& Temp, double& Dew, double& CBH);
+void show_output(double& Temp, double& Wspeed, double& Dew, double& CBH, double& Wchill);
 
 int main() {
 
@@ -58,7 +58,7 @@ void take_input(double& Temp, double& Wspeed, double& Dew) {
 }
 
 // Function that calculates the wind chill using the meteorological formula
-void calcWchill(double Temp, double Wspeed, double& Wchill) {
+void calcWchill(double& Temp, double& Wspeed, double& Wchill) {
 
 	Wchill = 35.74 + (0.6215 * Temp)
 	         - (35.75 * pow(Wspeed, 0.16))
@@ -67,13 +67,13 @@ void calcWchill(double Temp, double Wspeed, double& Wchill) {
 
 // Function that calculates the Cloud Base Height (CBH)
 // based on the difference between temperature and dew point
-void calcCBH(double Temp, double Dew, double& CBH) {
+void calcCBH(double& Temp, double& Dew, double& CBH) {
 
 	CBH = 1000.0 * (Temp - Dew) / 4.4;
 }
 
 // Function to display the calculated weather information
-void show_output(double Temp, double Wspeed, double Dew, double CBH, double Wchill) {
+void show_output(double& Temp, double& Wspeed, double& Dew, double& CBH, double& Wchill) {
 
 	cout << "The wind chill for today is " << Wchill << " F" << endl;
 	cout << "The Cloud Base Height for today is " << CBH << " ft" << endl;

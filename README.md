@@ -4,9 +4,9 @@ using namespace std;
 
 // Function prototypes
 void take_input(double& Temp, double& Wspeed, double& Dew);
-void calcWchill(double Temp, double Wspeed, double& Wchill);
-void calcCBH(double Temp, double Dew, double& CBH);
-void show_output(double Temp, double Wspeed, double Dew, double CBH, double Wchill);
+void calcWchill(double& Temp, double& Wspeed, double& Wchill);
+void calcCBH(double& Temp, double& Dew, double& CBH);
+void show_output(double& Temp, double& Wspeed, double& Dew, double& CBH, double& Wchill);
 
 int main() {
 
